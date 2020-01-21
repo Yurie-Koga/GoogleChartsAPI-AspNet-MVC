@@ -33,3 +33,4 @@
 /Users/ujisaori/Documents/02_Code on Github/test-Chart-AspNet-MVC-Csharp/obj/Debug/netcoreapp3.1/test-Chart-AspNet-MVC-Csharp.dll
 /Users/ujisaori/Documents/02_Code on Github/test-Chart-AspNet-MVC-Csharp/obj/Debug/netcoreapp3.1/test-Chart-AspNet-MVC-Csharp.pdb
 /Users/ujisaori/Documents/02_Code on Github/test-Chart-AspNet-MVC-Csharp/obj/Debug/netcoreapp3.1/test-Chart-AspNet-MVC-Csharp.csproj.CopyComplete
+/Users/ujisaori/Documents/02_Code on Github/test-Chart-AspNet-MVC-Csharp/obj/Debug/netcoreapp3.1/Razor/Views/Home/Chart.cshtml.g.cs
