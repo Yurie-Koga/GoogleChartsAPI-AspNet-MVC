@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>test_Chart_AspNet_MVC_Csharp</RootNamespace>
+  </PropertyGroup>
+
+
+
+</Project>
