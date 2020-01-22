@@ -1,7 +1,7 @@
 # test-Chart-AspNet-MVC-Csharp
 
 ### Over all
-![alt text](../media/image_barChart.png?raw=true)
+![alt text](../readme-image/image_barChart.png?raw=true)
 
 ### To build on VS Code
 > $ dotnet new mvc
