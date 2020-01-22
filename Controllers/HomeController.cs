@@ -40,6 +40,7 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
             return View();
         }
 
+        // Use at Chart.cshtml >LoadData >url: '@Url.Action("PopulationChart","Home")'
         public JsonResult PopulationChart()
         {
             var populationList = PopulationDataHelper.GetUsStatePopulationList();
