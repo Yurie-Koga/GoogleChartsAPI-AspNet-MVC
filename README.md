@@ -1,5 +1,7 @@
 # test-Chart-AspNet-MVC-Csharp
-Google Chart API, ASP.NET MVC
+
+### Over all
+![alt text](../media/image_barChart.png?raw=true)
 
 ### To build on VS Code
 > $ dotnet new mvc
