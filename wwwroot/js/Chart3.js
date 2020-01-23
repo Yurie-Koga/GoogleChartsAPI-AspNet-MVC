@@ -5,7 +5,7 @@ google.load("visualization", "1.0", { packages: ["corechart"] });
 $(document).ready(function() {
   $.ajax({
     // Changed for Partial View
-    // url: '@Url.Action("PopulationChart2","Home")',
+    // url: '@Url.Action("PopulationChart3","Home")',
     url: "/Home/PopulationChart3",
     dataType: "json",
     type: "GET",
