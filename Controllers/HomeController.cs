@@ -24,20 +24,6 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
         }
 
         /// <sammary>
-        /// Chart
-        /// </sammary>
-        public IActionResult Chart() { return View(); }
-
-        // Use at Chart.cshtml >LoadData >url: '@Url.Action("PopulationChart","Home")'
-        public JsonResult PopulationChart()
-        {
-            var populationList = PopulationDataHelper.GetUsStatePopulationList();
-            return Json(populationList);
-        }
-
-
-
-        /// <sammary>
         /// Chart3
         /// </sammary>
         public IActionResult Chart3() { return View(); }
