@@ -53,12 +53,8 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
 
                 // Add records: Id is autoincremented by default
                 // Pattern 1
-                context.PopulationModels2.Add(new PopulationModel2
-                {
-                    CityName = "LA",
-                    PopulationYear2010 = 2000,
-                    PopulationYear2000 = 1900
-                });
+                context.PopulationModels2.Add(new PopulationModel2 { CityName = "LA", PopulationYear2010 = 2000, PopulationYear2000 = 1900 });
+                context.PopulationModels2.Add(new PopulationModel2 { CityName = "CA", PopulationYear2010 = 1000, PopulationYear2000 = 1500 });
                 // Pattern 2
                 var WA = new PopulationModel2();
                 WA.CityName = "WA";
