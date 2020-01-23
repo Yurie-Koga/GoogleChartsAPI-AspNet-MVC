@@ -22,10 +22,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>                         *@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Chart">US Population Chart</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Chart">Data: List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Chart2">US Population2 Chart</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Chart2">DB: SQLite</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Chart3">Partical View</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -49,6 +52,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @* @Scripts.Render("~/bundles/Chart3") *@
+    <script src="~/js/Chart3.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

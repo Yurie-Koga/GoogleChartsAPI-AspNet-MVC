@@ -94,5 +94,10 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
                 return Json(list);
             }
         }
+
+        public IActionResult Chart3()
+        {
+            return View();
+        }
     }
 }
