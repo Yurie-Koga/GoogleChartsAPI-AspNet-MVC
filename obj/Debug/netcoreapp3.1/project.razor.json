@@ -20506,6 +20506,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/ujisaori/Documents/02_Code on Github/test-Chart-AspNet-MVC-Csharp/Views/Home/Chart2.cshtml",
+      "TargetPath": "Views/Home/Chart2.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/ujisaori/Documents/02_Code on Github/test-Chart-AspNet-MVC-Csharp/Views/Shared/Error.cshtml",
       "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
