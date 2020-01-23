@@ -1,18 +1,12 @@
-{
-  /* <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>   */
-}
 // Must add "src="https://www.google.com/jsapi" @_Layout.cshtml
+// Load Visualization API and chart package
 google.load("visualization", "1.0", { packages: ["corechart"] });
-// google.charts.load("current", {
-//   packages: ["corechart", "bar"]
-// });
-// google.charts.setOnLoadCallback(LoadData);
 
 $(document).ready(function() {
   $.ajax({
     // Changed for Partial View
     // url: '@Url.Action("PopulationChart2","Home")',
-    url: "/Home/PopulationChart2",
+    url: "/Home/PopulationChart3",
     dataType: "json",
     type: "GET",
     error: function(xhr, status, error) {
@@ -24,7 +18,6 @@ $(document).ready(function() {
       return false;
     }
   });
-  //   return false;
 });
 
 function PopulationChart(data) {
@@ -55,5 +48,4 @@ function PopulationChart(data) {
     document.getElementById("chart_div")
   );
   chart.draw(data, options);
-  //   return false;
 }
