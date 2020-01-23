@@ -2,7 +2,7 @@
 
 ### Over all
 
-![alt text](../readme-image/image_barChart.png?raw=true)
+![alt text](../readme-image/image_Orverall.png?raw=true)
 
 ### To build on VS Code
 
