@@ -13,21 +13,9 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        public HomeController(ILogger<HomeController> logger) { _logger = logger; }
+        public IActionResult Index() { return View(); }
+        public IActionResult Privacy() { return View(); }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -35,10 +23,10 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Chart()
-        {
-            return View();
-        }
+        /// <sammary>
+        /// Chart
+        /// </sammary>
+        public IActionResult Chart() { return View(); }
 
         // Use at Chart.cshtml >LoadData >url: '@Url.Action("PopulationChart","Home")'
         public JsonResult PopulationChart()
@@ -47,10 +35,11 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
             return Json(populationList);
         }
 
-        public IActionResult Chart2()
-        {
-            return View();
-        }
+        /// <sammary>
+        /// Chart2
+        /// </sammary>
+        public IActionResult Chart2() { return View(); }
+
         // Use at Chart2.cshtml >LoadData >url: '@Url.Action("PopulationChart2","Home")'
         public JsonResult PopulationChart2()
         {
@@ -95,12 +84,12 @@ namespace test_Chart_AspNet_MVC_Csharp.Controllers
             }
         }
 
-        public IActionResult Chart3()
-        {
-            return View();
-        }
+        /// <sammary>
+        /// Chart3
+        /// </sammary>
+        public IActionResult Chart3() { return View(); }
 
-        // Use at Chart2.cshtml >LoadData >url: "/Home/PopulationChart3"
+        // Use at Chart3.cshtml >LoadData >url: "/Home/PopulationChart3"
         public JsonResult PopulationChart3()
         {
             using (var context = new PopulationDataHelper3())
