@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace test_Chart_AspNet_MVC_Csharp
+namespace GoogleChartsAPI_AspNet_MVC
 {
     public class Program
     {

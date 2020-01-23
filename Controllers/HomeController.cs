@@ -5,10 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using test_Chart_AspNet_MVC_Csharp.Models;
-using test_Chart_AspNet_MVC_Csharp.Db;
+using GoogleChartsAPI_AspNet_MVC.Models;
+using GoogleChartsAPI_AspNet_MVC.Db;
 
-namespace test_Chart_AspNet_MVC_Csharp.Controllers
+namespace GoogleChartsAPI_AspNet_MVC.Controllers
 {
     public class HomeController : Controller
     {

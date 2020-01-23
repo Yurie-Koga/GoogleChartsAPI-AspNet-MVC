@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace test_Chart_AspNet_MVC_Csharp
+namespace GoogleChartsAPI_AspNet_MVC
 {
     public class Startup
     {

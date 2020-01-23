@@ -1,6 +1,6 @@
 using System;
 
-namespace test_Chart_AspNet_MVC_Csharp.Models
+namespace GoogleChartsAPI_AspNet_MVC.Models
 {
     public class ErrorViewModel
     {

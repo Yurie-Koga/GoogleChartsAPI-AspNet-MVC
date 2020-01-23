@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using test_Chart_AspNet_MVC_Csharp.Models;
+using GoogleChartsAPI_AspNet_MVC.Models;
 
 
-namespace test_Chart_AspNet_MVC_Csharp.Db
+namespace GoogleChartsAPI_AspNet_MVC.Db
 {
     /// <summary>
     /// This class handles the sqlite database
