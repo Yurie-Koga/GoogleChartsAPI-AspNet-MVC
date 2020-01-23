@@ -9,7 +9,8 @@ google.load("visualization", "1.0", { packages: ["corechart"] });
 
 $(document).ready(function() {
   $.ajax({
-    url: '@Url.Action("PopulationChart2","Home")',
+    // url: '@Url.Action("PopulationChart2","Home")',
+    url: "/Home/PopulationChart2",
     dataType: "json",
     type: "GET",
     error: function(xhr, status, error) {
