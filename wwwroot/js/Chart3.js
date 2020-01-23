@@ -1,6 +1,7 @@
 {
   /* <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>   */
 }
+// Must add "src="https://www.google.com/jsapi" @_Layout.cshtml
 google.load("visualization", "1.0", { packages: ["corechart"] });
 // google.charts.load("current", {
 //   packages: ["corechart", "bar"]
@@ -9,6 +10,7 @@ google.load("visualization", "1.0", { packages: ["corechart"] });
 
 $(document).ready(function() {
   $.ajax({
+    // Changed for Partial View
     // url: '@Url.Action("PopulationChart2","Home")',
     url: "/Home/PopulationChart2",
     dataType: "json",
