@@ -16,7 +16,10 @@ $(document).ready(function() {
       BarChart(chartData, "chart_div1");
       ColumnChart(false, chartData, "chart_div2");
       ColumnChart(true, chartData, "chart_div3");
-      PieChart(chartData, "chart_div4");
+      var pieChartData1 = setPieChartData1(data);
+      PieChart(pieChartData1, "chart_div4", "2010");
+      var pieChartData2 = setPieChartData2(data);
+      PieChart(pieChartData2, "chart_div5", "2000");
       return false;
     }
   });
@@ -30,6 +33,24 @@ function setChartData(data) {
       parseInt(item.populationYear2010),
       parseInt(item.populationYear2000)
     ]);
+  });
+  var chartData = google.visualization.arrayToDataTable(dataArray);
+  return chartData;
+}
+
+function setPieChartData1(data) {
+  var dataArray = [["City", "2010 Population"]];
+  $.each(data, function(i, item) {
+    dataArray.push([item.cityName, parseInt(item.populationYear2010)]);
+  });
+  var chartData = google.visualization.arrayToDataTable(dataArray);
+  return chartData;
+}
+
+function setPieChartData2(data) {
+  var dataArray = [["City", "2000 Population"]];
+  $.each(data, function(i, item) {
+    dataArray.push([item.cityName, parseInt(item.populationYear2000)]);
   });
   var chartData = google.visualization.arrayToDataTable(dataArray);
   return chartData;
@@ -78,9 +99,9 @@ function ColumnChart(boolean, data, chartId) {
   chart.draw(data, options);
 }
 
-function PieChart(data, chartId) {
+function PieChart(data, chartId, Year) {
   var options = {
-    title: "Population of Largest U.S. Cities",
+    title: "Population of Largest U.S. Cities (" + Year + ")",
     chartArea: {
       width: "50%"
     }
