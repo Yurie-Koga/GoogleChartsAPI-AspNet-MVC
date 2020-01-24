@@ -4,9 +4,7 @@ google.load("visualization", "1.0", { packages: ["corechart"] });
 
 $(document).ready(function() {
   $.ajax({
-    // Changed for Partial View
-    // url: '@Url.Action("PopulationChart3","Home")',
-    url: "/Home/PopulationChart3",
+    url: "/Home/PopulationData",
     dataType: "json",
     type: "GET",
     error: function(xhr, status, error) {
@@ -18,12 +16,13 @@ $(document).ready(function() {
       BarChart(chartData, "chart_div1");
       ColumnChart(false, chartData, "chart_div2");
       ColumnChart(true, chartData, "chart_div3");
+      PieChart(chartData, "chart_div4");
       return false;
     }
   });
 });
 
-setChartData = data => {
+function setChartData(data) {
   var dataArray = [["City", "2010 Population", "2000 Population"]];
   $.each(data, function(i, item) {
     dataArray.push([
@@ -34,7 +33,7 @@ setChartData = data => {
   });
   var chartData = google.visualization.arrayToDataTable(dataArray);
   return chartData;
-};
+}
 
 function BarChart(data, chartId) {
   var options = {
@@ -66,14 +65,27 @@ function ColumnChart(boolean, data, chartId) {
     },
     colors: ["#b0120a", "#ffab91"],
     hAxis: {
-      title: "Total Population",
-      minValue: 0
+      title: "City"
     },
     vAxis: {
-      title: "City"
+      title: "Total Population",
+      minValue: 0
     }
   };
   var chart = new google.visualization.ColumnChart(
+    document.getElementById(chartId)
+  );
+  chart.draw(data, options);
+}
+
+function PieChart(data, chartId) {
+  var options = {
+    title: "Population of Largest U.S. Cities",
+    chartArea: {
+      width: "50%"
+    }
+  };
+  var chart = new google.visualization.PieChart(
     document.getElementById(chartId)
   );
   chart.draw(data, options);

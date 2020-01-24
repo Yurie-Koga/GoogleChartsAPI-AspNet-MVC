@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GoogleChartsAPI_AspNet_MVC.Models
 {
-    public class PopulationModel3
+    public class PopulationModel
     {
         [Key]
         public string CityName { get; set; }

@@ -24,14 +24,14 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
         }
 
         /// <sammary>
-        /// Chart3
+        /// PopulationChart
         /// </sammary>
-        public IActionResult Chart3() { return View(); }
+        public IActionResult PopulationChart() { return View(); }
 
-        // Use at Chart3.cshtml >LoadData >url: "/Home/PopulationChart3"
-        public JsonResult PopulationChart3()
+        // Use at PopulationChart.cshtml >LoadData >url: "/Home/PopulationData"
+        public JsonResult PopulationData()
         {
-            using (var context = new PopulationDataHelper3())
+            using (var context = new PopulationDbContext())
             {
                 // Clear and reset database
                 context.Database.EnsureDeleted();
@@ -40,20 +40,20 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                 context.Database.EnsureCreated();
 
                 // Add records: Id is autoincremented by default               
-                context.PopulationModels3.Add(new PopulationModel3 { CityName = "City-1", PopulationYear2010 = 3000, PopulationYear2000 = 1000 });
-                context.PopulationModels3.Add(new PopulationModel3 { CityName = "City-2", PopulationYear2010 = 2500, PopulationYear2000 = 1500 });
-                context.PopulationModels3.Add(new PopulationModel3 { CityName = "City-3", PopulationYear2010 = 2000, PopulationYear2000 = 2000 });
-                context.PopulationModels3.Add(new PopulationModel3 { CityName = "City-4", PopulationYear2010 = 1500, PopulationYear2000 = 2500 });
-                context.PopulationModels3.Add(new PopulationModel3 { CityName = "City-5", PopulationYear2010 = 1000, PopulationYear2000 = 3000 });
+                context.PopulationDbSet.Add(new PopulationModel { CityName = "City-1", PopulationYear2010 = 3000, PopulationYear2000 = 1000 });
+                context.PopulationDbSet.Add(new PopulationModel { CityName = "City-2", PopulationYear2010 = 2500, PopulationYear2000 = 1500 });
+                context.PopulationDbSet.Add(new PopulationModel { CityName = "City-3", PopulationYear2010 = 2000, PopulationYear2000 = 2000 });
+                context.PopulationDbSet.Add(new PopulationModel { CityName = "City-4", PopulationYear2010 = 1500, PopulationYear2000 = 2500 });
+                context.PopulationDbSet.Add(new PopulationModel { CityName = "City-5", PopulationYear2010 = 1000, PopulationYear2000 = 3000 });
 
                 // Commit changes
                 context.SaveChanges();
 
                 // Fetch all Population2         
-                var list = new List<PopulationModel3>();
-                foreach (var population in context.PopulationModels3.ToList())
+                var list = new List<PopulationModel>();
+                foreach (var population in context.PopulationDbSet.ToList())
                 {
-                    list.Add(new PopulationModel3
+                    list.Add(new PopulationModel
                     {
                         CityName = population.CityName,
                         PopulationYear2010 = population.PopulationYear2010,
