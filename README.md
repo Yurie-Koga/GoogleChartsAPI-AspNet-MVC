@@ -2,7 +2,7 @@
 
 ### Over all
 
-![alt text](../readme-image/image_Orverall.png?raw=true)
+<img src="../readme-image/image_Orverall.png" width="500" height="700">
 
 ### To build on VS Code
 
