@@ -63,5 +63,10 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                 return Json(list);
             }
         }
+
+        /// <sammary>
+        /// CakeChart
+        /// </sammary>
+        public IActionResult CakeChart() { return View(); }
     }
 }
