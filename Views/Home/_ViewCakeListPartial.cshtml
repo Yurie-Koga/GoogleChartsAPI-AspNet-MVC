@@ -1,33 +1,31 @@
+@* @model GoogleChartsAPI_AspNet_MVC.Models.CakeModel *@
+@model List<CakeModel>
+
 <div class="container">
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>#</th>
+                    @* <th>#</th> *@
                     <th>Name</th>
                     <th>Eaten Year 2019</th>
+                    <th>Eaten Year 2015</th>
                     <th>Eaten Year 2010</th>
+                    <th>Eaten Year 2005</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach (var item in Model)
+                {
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Cheese</td>
-                    <td>10</td>
-                    <td>11</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Chocolate</td>
-                    <td>20</td>
-                    <td>21</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Fruit tart</td>
-                    <td>30</td>
-                    <td>31</td>
-                </tr>
+                    @* <th scope="row">1</th> *@
+                    <td>@item.CakeName</td>
+                    <td>@item.EatenYear2019</td>
+                    <td>@item.EatenYear2015</td>
+                    <td>@item.EatenYear2010</td>
+                    <td>@item.EatenYear2005</td>
+                </tr>    
+                }
             </tbody>
         </table>
     </div>    
