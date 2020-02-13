@@ -72,19 +72,19 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
             using (var context = new CakeDbContext())
             {
                 // Clear and reset database
-                context.Database.EnsureDeleted();
+                // context.Database.EnsureDeleted();
 
                 // Create database if it does not exist
                 context.Database.EnsureCreated();
 
                 // Add records: Id is autoincremented by default               
-                context.CakeDbSet.Add(new CakeModel { CakeName = "Cheese", EatenYear2019 = 10, EatenYear2015 = 11, EatenYear2010 = 12, EatenYear2005 = 13 });
-                context.CakeDbSet.Add(new CakeModel { CakeName = "Fruit Tart", EatenYear2019 = 20, EatenYear2015 = 21, EatenYear2010 = 22, EatenYear2005 = 23 });
-                context.CakeDbSet.Add(new CakeModel { CakeName = "Chocolate", EatenYear2019 = 30, EatenYear2015 = 31, EatenYear2010 = 32, EatenYear2005 = 33 });
-                context.CakeDbSet.Add(new CakeModel { CakeName = "Strawberry", EatenYear2019 = 40, EatenYear2015 = 41, EatenYear2010 = 42, EatenYear2005 = 43 });
+                // context.CakeDbSet.Add(new CakeModel { CakeName = "Cheese", EatenYear2019 = 10, EatenYear2015 = 11, EatenYear2010 = 12, EatenYear2005 = 13 });
+                // context.CakeDbSet.Add(new CakeModel { CakeName = "Fruit Tart", EatenYear2019 = 20, EatenYear2015 = 21, EatenYear2010 = 22, EatenYear2005 = 23 });
+                // context.CakeDbSet.Add(new CakeModel { CakeName = "Chocolate", EatenYear2019 = 30, EatenYear2015 = 31, EatenYear2010 = 32, EatenYear2005 = 33 });
+                // context.CakeDbSet.Add(new CakeModel { CakeName = "Strawberry", EatenYear2019 = 40, EatenYear2015 = 41, EatenYear2010 = 42, EatenYear2005 = 43 });
 
                 // Commit changes
-                context.SaveChanges();
+                // context.SaveChanges();
 
                 // Fetch all Cake         
                 var list = new List<CakeModel>();
@@ -108,6 +108,7 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
         {
             using (var context = new CakeDbContext())
             {
+
                 // Fetch all Cake         
                 var list = new List<CakeModel>();
                 foreach (var cake in context.CakeDbSet.ToList())
@@ -122,6 +123,30 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                     });
                 }
                 return Json(list);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Create([FromForm]CakeModel newCakeModel)
+        {
+            Console.WriteLine(newCakeModel);
+            if (ModelState.IsValid)
+            {
+                using (var context = new CakeDbContext())
+                {
+                    // Create database if it does not exist
+                    context.Database.EnsureCreated();
+
+                    context.CakeDbSet.Add(newCakeModel);
+                    // Commit changes
+                    context.SaveChanges();
+                }
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(newCakeModel);
             }
         }
     }

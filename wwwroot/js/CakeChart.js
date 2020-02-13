@@ -54,3 +54,7 @@ function CakeBarChart(data, chartId) {
   );
   chart.draw(data, options);
 }
+
+function showAlert() {
+  alert("aaaa");
+}
