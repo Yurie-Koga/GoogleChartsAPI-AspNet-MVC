@@ -127,9 +127,9 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([FromForm]CakeModel newCakeModel)
+        public IActionResult Create([FromForm]CakeModel newCakeModel)
         {
-            Console.WriteLine(newCakeModel);
+            Console.WriteLine("Here is Create: " + newCakeModel.CakeName);
             if (ModelState.IsValid)
             {
                 using (var context = new CakeDbContext())
@@ -137,12 +137,22 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                     // Create database if it does not exist
                     context.Database.EnsureCreated();
 
-                    context.CakeDbSet.Add(newCakeModel);
+                    // context.CakeDbSet.Add(newCakeModel);
+                    context.CakeDbSet.Add(new CakeModel
+                    {
+                        CakeName = newCakeModel.CakeName,
+                        EatenYear2019 = newCakeModel.EatenYear2019,
+                        EatenYear2015 = newCakeModel.EatenYear2015,
+                        EatenYear2010 = newCakeModel.EatenYear2010,
+                        EatenYear2005 = newCakeModel.EatenYear2005
+                    });
+
                     // Commit changes
                     context.SaveChanges();
                 }
 
-                return RedirectToAction("Index");
+                // return RedirectToAction("Index");
+                return RedirectToAction("CakeChart");
             }
             else
             {
