@@ -37,9 +37,6 @@ function setCakeData(data) {
 function CakeBarChart(data, chartId) {
   var options = {
     title: "Amount of eaten cakes",
-    chartArea: {
-      width: "50%"
-    },
     colors: ["#0D47A1", "#1976D2", "#2196F3", "#64B5F6"],
     hAxis: {
       title: "Total amount",

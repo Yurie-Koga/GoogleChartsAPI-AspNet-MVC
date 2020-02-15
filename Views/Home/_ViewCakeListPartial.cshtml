@@ -5,7 +5,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    @* <th>#</th> *@
+                    <th>#</th>
                     <th>Name</th>
                     <th>Eaten Year 2019</th>
                     <th>Eaten Year 2015</th>
@@ -17,7 +17,7 @@
                 @foreach (var item in Model)
                 {
                 <tr>
-                    @* <th scope="row">1</th> *@
+                    <th scope="row">@item.Id</th>
                     <td>@item.CakeName</td>
                     <td>@item.EatenYear2019</td>
                     <td>@item.EatenYear2015</td>

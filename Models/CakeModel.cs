@@ -5,6 +5,7 @@ namespace GoogleChartsAPI_AspNet_MVC.Models
     public class CakeModel
     {
         [Key]
+        public int Id { get; set; }
         public string CakeName { get; set; }
         public int EatenYear2019 { get; set; }
         public int EatenYear2015 { get; set; }

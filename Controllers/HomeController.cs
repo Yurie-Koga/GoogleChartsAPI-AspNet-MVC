@@ -12,6 +12,10 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
 {
     public class HomeController : Controller
     {
+        public string Hellow()
+        {
+            return "Hellow World";
+        }
         private readonly ILogger<HomeController> _logger;
         public HomeController(ILogger<HomeController> logger) { _logger = logger; }
         public IActionResult Index() { return View(); }
@@ -92,6 +96,7 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                 {
                     list.Add(new CakeModel
                     {
+                        Id = cake.Id,
                         CakeName = cake.CakeName,
                         EatenYear2019 = cake.EatenYear2019,
                         EatenYear2015 = cake.EatenYear2015,
@@ -115,6 +120,7 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                 {
                     list.Add(new CakeModel
                     {
+                        Id = cake.Id,
                         CakeName = cake.CakeName,
                         EatenYear2019 = cake.EatenYear2019,
                         EatenYear2015 = cake.EatenYear2015,
@@ -129,7 +135,6 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
         [HttpPost]
         public IActionResult Create([FromForm]CakeModel newCakeModel)
         {
-            Console.WriteLine("Here is Create: " + newCakeModel.CakeName);
             if (ModelState.IsValid)
             {
                 using (var context = new CakeDbContext())
@@ -137,15 +142,7 @@ namespace GoogleChartsAPI_AspNet_MVC.Controllers
                     // Create database if it does not exist
                     context.Database.EnsureCreated();
 
-                    // context.CakeDbSet.Add(newCakeModel);
-                    context.CakeDbSet.Add(new CakeModel
-                    {
-                        CakeName = newCakeModel.CakeName,
-                        EatenYear2019 = newCakeModel.EatenYear2019,
-                        EatenYear2015 = newCakeModel.EatenYear2015,
-                        EatenYear2010 = newCakeModel.EatenYear2010,
-                        EatenYear2005 = newCakeModel.EatenYear2005
-                    });
+                    context.CakeDbSet.Add(newCakeModel);
 
                     // Commit changes
                     context.SaveChanges();
